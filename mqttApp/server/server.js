@@ -1,4 +1,4 @@
-var mosca = require('mosca')
+ var mosca = require('mosca')
 var settings = {
 port: 1883,
 persistence: mosca.persistence.Memory
