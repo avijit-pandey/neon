@@ -31,6 +31,7 @@ function mqqt_connection()
 	print (collegid)
 	broker_connect_tries=broker_connect_tries + 1 
 	dofile('mqttsetup_valve.lua') 
+
 	m:connect(mqtt_broker_ip,mqtt_port,0,function(conn) 
 		tmr.stop(1)
 		tmr.unregister(1)
@@ -40,11 +41,10 @@ function mqqt_connection()
 	end)     
 end	
 
----tmr.alarm(0,60000,1,function()  --sleeps after being active for 60 seconds
---	print("sleep")
---	wifi.sta.disconnect()
---	node.dsleep(sleepTime)
---end)
+tmr.alarm(0,60000,1,function()  --sleeps after being active for 60 seconds
+	print("restarting")
+	dofile("init.lua")
+end)
 
 
 

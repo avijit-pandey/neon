@@ -13,7 +13,7 @@ ip_Adrr =
 wifi.ap.setip(ip_Adrr)
 
 cfg={}
-cfg.ssid="iot_valve01"
+cfg.ssid="iot_valve15"
 cfg.pwd="elsi1234"  -- min. 8 char, factory set to macid
 
 wifi.ap.config(cfg)
@@ -124,7 +124,7 @@ sv:listen(80,function(conn)
         conn:send('<!DOCTYPE HTML>\n')
         conn:send('<html>\n')
         conn:send('<head><meta  content="text/html; charset=utf-8">\n')
-        conn:send('<title>k-Yantra Relay Controller</title></head>\n')
+        conn:send('<title>IoT Valve Controller</title></head>\n')
         conn:send('<body><h1 style="text-align:center;">k-Yantra Relay Controller</h1>\n')
 
         -- Buttons 
@@ -137,7 +137,7 @@ sv:listen(80,function(conn)
         conn:send('<b>Password</b> of wifi router you want to connect to: <input type="text" name="pass" value=""><br><br>')
         conn:send('<input type="submit" name="submit" value="Submit"></p><br>')
 		conn:send('<br><br><br><br>')
-		conn:send('<h2 style="text-align:center;">Test yout solenoid valve here:</h2>\n <br><br>')
+		conn:send('<h2 style="text-align:center;">Test your solenoid valve here:</h2>\n <br><br>')
         conn:send('<p style="text-align:center;">Click <b>open button</b> to open the solenoid valve. <input type="submit" name="open_valve" value="open"><br><br>')
         conn:send('Click <b>close button</b> to close the solenoid valve. <input type="submit" name="close_valve" value="close"></p><br><br>')
         conn:send('</body></html>\n')
